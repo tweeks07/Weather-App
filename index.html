@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!--Bootstrap CSS-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css">
+    <!--Style CSS-->
+    <link rel="stylesheet" href="Assets/style.css">
+    <title>Weather App</title>
+</head>
+
+<body>
+
+<div class="jumbotron jumbotron-fluid custom-jumbotron text-center" style="background-color: rgb(78, 72, 72)";><h1>Weather Dashboard</h1></div>
+
+<h5>Search for a City:</h5>
+<!-- The form -->
+<form class="example" action="action_page.php">
+    <input type="text" placeholder="Search.." name="search">
+    <button type="submit"><i class="fa fa-search"></i></button>
+  </form>
+
+<section>
+    <h3 id="currentCity"></h3>
+    <ul id="currentInfo">
+        <li id="temp"></li>
+        <li id="humidity"></li>
+        <li id="windSpeed"></li>
+        <li id="uvIndex"></li>
+    </ul>
+</section>
+
+    
+
+
+
+
+
+
+
+<!--JavaScript Bootstrap files-->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.slim.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.1/umd/popper.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/js/bootstrap.min.js"></script>
+    <!--Custom JavaScript-->
+    <script src="Assets/script.js"></script>
+</body>
+
+</html>
