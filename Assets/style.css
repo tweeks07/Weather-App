@@ -4,4 +4,15 @@ button {
 }
 
 section {
+position: relative;
+left: 650px;
+bottom: 75px;
+}
 
+form {
+margin: 10px;
+}
+
+h5 {
+margin: 10px;
+}

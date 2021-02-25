@@ -20,51 +20,40 @@ var userInput = "charlotte"
 var api = "873eef21345d1afb39e2c882a1521487"
 var currentWeatherURL = 'https://api.openweathermap.org/data/2.5/weather?q=' + userInput + '&appid=' +  api + '&units=imperial';
 
-var lat = response.city.coord.lat;
-var lon = response.city.coord.lon;
 
-
-function getCurrentWeather(){
-fetch(currentWeatherURL) 
-    .then(function(results){
-        return results.json();
-    })
-    .then(function (weather) {
-    console.log(weather);
-    var currentCity = document.querySelector('#currentCity');
-    console.log(currentCity);
-    currentCity.textContent = weather.name;
-    var temp = document.querySelector ('#temp');
-    //var tempF = 9/5 * (weather.main.temp - 273) + 32;
-    temp.textContent = "Temperature: " + weather.main.temp;
-    var humidity = document.querySelector ('#humidity');
-    humidity.textContent = weather.main.humidity + "%";
-    var windSpeed = document.querySelector ('#windSpeed');
-    windSpeed.textContent = weather.wind.speed + "MPH";
-    });
-
-};
-
-
-var lat = response.city.coord.lat;
-var lon = response.city.coord.lon;
-var currentUVI = 'http://api.openweathermap.org/data/2.5/uvi?lat={lat}&lon={lon}&appid=' + api
 
 function getCurrentUVI(lat, lon){
-fetch(currentUVI)
-    .then(function(results){
-        return results.json();
-    })
-    .then(function(UVI) {
-        console.log(UVI);
-    })
-
-
-}
-
-
-
-getCurrentWeather();
-getCurrentUVI();
-
-//Kelvin to Fahrenheit: F = 9/5(K - 273) + 32 or F = 1.8(K - 273) + 32.
+    var currentUVI = 'http://api.openweathermap.org/data/2.5/uvi?lat='+lat+"&lon="+lon+"&appid=" + api
+    fetch(currentUVI)
+        .then(function(results){
+            return results.json();
+        })
+        .then(function(UVI) {
+            console.log(UVI);
+        })
+    }
+    function getCurrentWeather(){
+    fetch(currentWeatherURL) 
+        .then(function(results){
+            return results.json();
+        })
+        .then(function (weather) {
+        console.log(weather);
+        var currentCity = document.querySelector('#currentCity');
+        console.log(currentCity);
+        currentCity.textContent = weather.name;
+        var temp = document.querySelector ('#temp');
+        //var tempF = 9/5 * (weather.main.temp - 273) + 32;
+        temp.textContent = "Temperature: " + weather.main.temp;
+        var humidity = document.querySelector ('#humidity');
+        humidity.textContent = "Humidity: " + weather.main.humidity + "%";
+        var windSpeed = document.querySelector ('#windSpeed');
+        windSpeed.textContent = "Wind Speed: " + weather.wind.speed + "MPH";
+        var lat = weather.coord.lat;
+        var lon = weather.coord.lon;
+        getCurrentUVI(lat, lon);
+     
+        });
+    };
+    getCurrentWeather();
+  
