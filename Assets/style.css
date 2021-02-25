@@ -1,5 +1,7 @@
-.jumbotron {
-    justify-content: center;
+button {
+    background-color: blue;
     color: white;
-    min-height: 20px;
 }
+
+section {
+
