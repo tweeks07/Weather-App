@@ -24,7 +24,13 @@ WHEN I click on a city in the search history
 THEN I am again presented with current and future conditions for that city
 ```
 
+### Technologies and Skills:
+* API call 
+
+### Functionality:
+![image](Assets/images/weatherDash.PNG)
+
 ### Deployment:
-* The URL of the functional, [deployed] application.
+* The URL of the functional, [deployed](https://tweeks07.github.io/Weather-App/) application.
 
 * The URL of the GitHub [repository](https://github.com/tweeks07/Weather-App)
